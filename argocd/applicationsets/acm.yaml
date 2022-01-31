@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: acm-applicationset
+spec:
+  generators:
+  - git:
+      repoURL: https://github.com/michaelkotelnikov/gitops-cluster-configuration.git
+      revision: master
+      directories:
+      - path: acm/overlays/*
+  template:
+    metadata:
+      name: '{{path.basename}}-acm'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/michaelkotelnikov/gitops-cluster-configuration.git
+        targetRevision: HEAD
+        path: '{{path}}'
+      destination:
+        name: '{{path.basename}}'
+      syncPolicy:
+        automated:
+          prune: false
+          selfHeal: true

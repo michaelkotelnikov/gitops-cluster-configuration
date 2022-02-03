@@ -1,0 +1,6 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: cronjob-etcd-backup
+spec:
+  schedule: '0 */10 * * *'

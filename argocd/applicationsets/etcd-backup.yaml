@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: etcd-backup-applicationset
+spec:
+  generators:
+  - git:
+      repoURL: https://github.com/michaelkotelnikov/gitops-cluster-configuration.git
+      revision: master
+      directories:
+      - path: etcd-backup/overlays/*
+  template:
+    metadata:
+      name: '{{path.basename}}-etcd-backup'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/michaelkotelnikov/gitops-cluster-configuration.git
+        targetRevision: HEAD
+        path: '{{path}}'
+      destination:
+        name: '{{path.basename}}'
+      syncPolicy:
+        automated:
+          prune: false
+          selfHeal: true

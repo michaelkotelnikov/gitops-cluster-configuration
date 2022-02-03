@@ -4,3 +4,5 @@ kind: Kustomization
 
 resources:
   - ../../base/core/namespaces/open-cluster-management
+  - ../../base/core/namespaces/etcd-backup
+  - ../../base/rbac.authorization.k8s.io/clusterrolebindings/etcd-backuper

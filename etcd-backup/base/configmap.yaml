@@ -89,4 +89,3 @@ data:
 kind: ConfigMap
 metadata:
   name: etcd-backup-script
-namespace: etcd-backup

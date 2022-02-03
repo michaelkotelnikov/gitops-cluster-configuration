@@ -5,7 +5,6 @@ kind: Kustomization
 namespace: etcd-backup
 
 resources:
-  - clusterrolebinding.yaml
   - configmap.yaml
   - cronjob.yaml
   - pvc.yaml

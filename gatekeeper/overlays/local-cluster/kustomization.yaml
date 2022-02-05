@@ -6,3 +6,5 @@ namespace: openshift-gatekeeper-system
 
 resources:
   - ../../base/gatekeeper
+  - ../../base/policies/disallow-https
+  

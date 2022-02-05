@@ -7,4 +7,6 @@ namespace: openshift-gatekeeper-system
 resources:
   - ../../base/gatekeeper
   - ../../base/policies/disallow-https
-  
+
+patchesStrategicMerge:
+  - enforcement.yaml

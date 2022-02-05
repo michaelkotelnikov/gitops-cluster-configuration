@@ -1,4 +1,5 @@
 apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sHttpsOnly
 spec:
     enforcementAction: deny
   

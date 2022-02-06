@@ -12,4 +12,3 @@ patches:
   - path: enforcement.yaml
     target:
       kind: K8sHttpsOnly
-      name: ingress-https-only

@@ -8,5 +8,8 @@ resources:
   - ../../base/gatekeeper
   - ../../base/policies/disallow-https
 
-patchesStrategicMerge:
-  - enforcement.yaml
+patches:
+  - path: enforcement.yaml
+    target:
+      kind: K8sHttpsOnly
+      name: ingress-https-only

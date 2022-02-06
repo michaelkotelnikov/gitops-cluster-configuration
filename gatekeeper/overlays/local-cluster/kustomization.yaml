@@ -6,11 +6,8 @@ namespace: openshift-gatekeeper-system
 
 resources:
   - ../../base/gatekeeper
-  - ../../base/policies/disallow-https
+  - ../../base/policies/disallow-http
   - ../../base/policies/verify-etcd-encryption
 
-patches:
-  - path: enforcement.yaml
-    target:
-      group: constraints.gatekeeper.sh
-      version: v1beta1
+components:
+  - ../../components/gatekeeper-enforce-all

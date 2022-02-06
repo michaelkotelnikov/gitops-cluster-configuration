@@ -9,10 +9,6 @@ resources:
   - ../../base/policies/disallow-http
   - ../../base/policies/verify-etcd-encryption
 
-patches:
-  - path: ../../patches/enforcement.yaml
-    target:
-      group: constraints.gatekeeper.sh
-      version: v1beta1
-      name: ingress-https-only
-      kind: K8sHttpsOnly
+components:
+  - ../../components/gatekeeper-enforce-http-policy
+  

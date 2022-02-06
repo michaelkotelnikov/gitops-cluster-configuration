@@ -11,4 +11,5 @@ resources:
 patches:
   - path: enforcement.yaml
     target:
-      kind: K8sHttpsOnly
+      group: constraints.gatekeeper.sh
+      version: v1beta1
